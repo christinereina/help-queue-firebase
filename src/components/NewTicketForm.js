@@ -1,3 +1,4 @@
+
 import React from "react";
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
@@ -10,6 +11,7 @@ function NewTicketForm(props){
 
   function addTicketToFirestore(event) {
     event.preventDefault();
+
     props.onNewTicketCreation();
 
     return firestore.collection('tickets').add(
@@ -25,11 +27,14 @@ function NewTicketForm(props){
   return (
     <React.Fragment>
       <ReusableForm 
-        // Don't forget to change the name of the function here as well.
         formSubmissionHandler={addTicketToFirestore}
         buttonText="Help!" />
     </React.Fragment>
   );
 }
+
+NewTicketForm.propTypes = {
+  onNewTicketCreation: PropTypes.func
+};
 
 export default NewTicketForm;
