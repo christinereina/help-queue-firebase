@@ -1,10 +1,17 @@
 import React from 'react'
-import { Nav } from './Navbar.elements';
+import { Nav, NavbarContainer, NavLogo, NavIcon } from './Navbar.elements';
 
 const Navbar = () => {
   return (
-    <Nav>Test</Nav>
-  )
-}
+    <Nav>
+      <NavbarContainer>
+        <NavLogo to='/'>
+          <NavIcon />
+          HELP QUEUE
+        </NavLogo>
+      </NavbarContainer>
+    </Nav>
+  );
+};
 
 export default Navbar;
