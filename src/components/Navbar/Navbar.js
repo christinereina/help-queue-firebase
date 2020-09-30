@@ -1,13 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks } from './Navbar.elements';
+import { Button } from '../globalStyles';
+import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink  } from './Navbar.elements';
 
 
 const Navbar = () => {
   const [click, setClick] = useState(false)
+  const [button, setButton] = useState(true)
 
-  const handleClicker = () => setClick(!click)
+  const handleClicker = () => setClick(!click);
+
+  const showButton = () => {
+    if(window.innerWidth <= 960) {
+      setButton(false)
+    } else {
+      setButton(true)
+    }
+  }
 
   return (
     <IconContext.Provider value={{ color: '#fff' }}>
@@ -26,7 +36,20 @@ const Navbar = () => {
             </NavItem>
             <NavItem>
               <NavLinks to='/signin'>Sign In</NavLinks>
-            </NavItem>  
+            </NavItem>
+            <NavItemBtn>
+              {button ? (
+                <NavBtnLink to="/signin">
+                  <Button primary>Sign In</Button>
+                </NavBtnLink>
+              ) : (
+                <NavBtnLink to="/signin">
+                  <Button fontBig primary>
+                    Sign IN
+                  </Button>
+                </NavBtnLink>
+              )}
+            </NavItemBtn>  
           </NavMenu>
         </NavbarContainer>
       </Nav>
