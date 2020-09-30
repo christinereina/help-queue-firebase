@@ -26,6 +26,12 @@ const Navbar = () => {
                 Home
               </NavLinks>
             </NavItem>
+            <NavMenu onClick={handleClicker}>
+            <NavItem>
+              <NavLinks to='/signin'>
+                Sign In
+              </NavLinks>
+            </NavItem>  
           </NavMenu>
         </NavbarContainer>
       </Nav>
