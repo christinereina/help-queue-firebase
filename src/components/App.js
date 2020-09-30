@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalStyles from './globalStyles'
+import GlobalStyle from './globalStyles';
 import Header from "./Header";
 import TicketControl from "./TicketControl";
 import Signin from "./Signin";
@@ -9,7 +9,7 @@ import Navbar from '././Navbar/Navbar';
 function App(){
   return ( 
     <Router>
-      <GlobalStyles />
+      <GlobalStyle />
       <Navbar />
       <Header />
       <Switch>
