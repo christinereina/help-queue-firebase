@@ -20,17 +20,12 @@ const Navbar = () => {
           <MobileIcon onClick={handleClicker}>
             {click ? <FaTimes /> : <FaBars />}
           </MobileIcon>
-          <NavMenu onClick={handleClicker}>
+          <NavMenu onClick={handleClicker} click={click}>
             <NavItem>
-              <NavLinks to='/'>
-                Home
-              </NavLinks>
+              <NavLinks to='/'>Home</NavLinks>
             </NavItem>
-            <NavMenu onClick={handleClicker}>
             <NavItem>
-              <NavLinks to='/signin'>
-                Sign In
-              </NavLinks>
+              <NavLinks to='/signin'>Sign In</NavLinks>
             </NavItem>  
           </NavMenu>
         </NavbarContainer>
