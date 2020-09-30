@@ -19,6 +19,12 @@ const Navbar = () => {
     }
   }
 
+  useEffect(() => {
+    showButton()
+  }, [])
+
+  window.addEventListener('resize', showButton);
+
   return (
     <IconContext.Provider value={{ color: '#fff' }}>
       <Nav>
@@ -33,9 +39,6 @@ const Navbar = () => {
           <NavMenu onClick={handleClicker} click={click}>
             <NavItem>
               <NavLinks to='/'>Home</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to='/signin'>Sign In</NavLinks>
             </NavItem>
             <NavItemBtn>
               {button ? (
