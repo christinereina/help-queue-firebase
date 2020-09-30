@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon } from './Navbar.elements';
+import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks } from './Navbar.elements';
 
 
 const Navbar = () => {
@@ -18,8 +18,15 @@ const Navbar = () => {
             HELP QUEUE
             </NavLogo>
           <MobileIcon onClick={handleClicker}>
-            { click ? <FaTimes /> : <FaBars /> }
+            {click ? <FaTimes /> : <FaBars />}
           </MobileIcon>
+          <NavMenu onClick={handleClicker}>
+            <NavItem>
+              <NavLinks to='/'>
+                Home
+              </NavLinks>
+            </NavItem>
+          </NavMenu>
         </NavbarContainer>
       </Nav>
     </IconContext.Provider>
