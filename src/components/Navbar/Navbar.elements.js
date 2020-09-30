@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaMagento } from 'react-icons/fa';
+import { WiStars } from "react-icons/wi";
 import { Link } from 'react-router-dom';
 import { Container } from '../../globalStyles';
 
@@ -34,6 +34,6 @@ display: flex;
 align-items: center;
 `
 
-export const NavIcon = styled(FaMagento)`
+export const NavIcon = styled(WiStars)`
 margin-right: 0.5rem;
 `
