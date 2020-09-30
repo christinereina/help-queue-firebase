@@ -48,7 +48,7 @@ const Navbar = () => {
               ) : (
                 <NavBtnLink to="/signin">
                   <Button fontBig primary>
-                    Sign IN
+                    Sign In
                   </Button>
                 </NavBtnLink>
               )}
